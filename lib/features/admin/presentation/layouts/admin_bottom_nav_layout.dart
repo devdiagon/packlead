@@ -76,16 +76,5 @@ class _AdminBottomNavLayoutState extends State<AdminBottomNavLayout> {
       ),
     );
   }
-
-  String _getAppBarTitle() {
-    switch (_selectedIndex) {
-      case 0: return 'Inicio Admin';
-      case 1: return 'Gestión de Pedidos';
-      case 2: return 'Repartidores';
-      case 3: return 'Mapa en Tiempo Real';
-      default: return 'Panel Admin';
-    }
-  }
-
 }
 
