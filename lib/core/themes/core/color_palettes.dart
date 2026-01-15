@@ -67,7 +67,7 @@ class OceanPalette {
   static const Color dividerSoft = Color(0xFFE0E6EA);
 
   static const Color textPrimary = Color(0xFF353535);
-  static const Color textSecondary = Color(0xFF6B6B6B);
+  static const Color textSecondary = Color(0xFFA8A8A8);
   static const Color textOnPrimary = Color(0xFFFFFFFF);
 
   static const Color success = Color(0xFF2EAD7A);

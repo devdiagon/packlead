@@ -9,6 +9,7 @@ class SaintColors {
   static const Color surface = OceanPalette.surfaceLight;
 
   static const Color foreground = OceanPalette.textPrimary;
+  static const Color lightForeground = OceanPalette.textSecondary;
 
   static const Color contrast = OceanPalette.contrastDark;
 
