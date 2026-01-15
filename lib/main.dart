@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:packlead/core/themes/index.dart';
-import 'core/themes/test_theme.dart';
+import 'package:packlead/navigation/app_router.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +17,13 @@ class MyApp extends StatelessWidget {
       theme: getGeneralTheme(Brightness.light),
       darkTheme: getGeneralTheme(Brightness.dark),
       themeMode: ThemeMode.system,
-      home: const TestThemeScreen(),
+      initialRoute: AppRouter.initialRoute,
+      onGenerateRoute: AppRouter.generateRoute,
+      onUnknownRoute: (settings) => MaterialPageRoute(
+        builder: (_) => Scaffold(
+          body: Center(child: Text('Página no encontrada')),
+        ),
+      ),
     );
   }
 }
