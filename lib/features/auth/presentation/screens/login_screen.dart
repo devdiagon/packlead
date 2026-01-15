@@ -100,7 +100,7 @@ class LoginScreen extends StatelessWidget {
                     ),
                   ),
                   child: Text(
-                    'Ingresar Operario',
+                    'Ingresar Repartidor',
                     style: TextStyle(
                         fontSize: 16,
                         color: SaintColors.surface

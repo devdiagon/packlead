@@ -3,12 +3,12 @@ import 'package:packlead/navigation/routers/auth_router.dart';
 import 'package:packlead/services/mock_services/mock_auth_service.dart';
 
 
-class OperatorDashboardScreen extends StatelessWidget {
+class DispatcherHomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Panel de Operador')),
-      body: Center(child: Text('Bienvenido Operador')),
+      appBar: AppBar(title: Text('Inicio de Repartidor')),
+      body: Center(child: Text('Bienvenido Repartidor')),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           MockAuthService.logout();
