@@ -37,21 +37,23 @@ class DispatcherHomeNotifier
       );
 
       // Search for active shipped order (should be only one)
-      final shippedOrder = orders.firstWhere(
-        (order) => order.state == OrderState.shipped,
-        orElse: () => orders.first,
-      );
+      final activeShipped = orders.isEmpty
+          ? null
+          : orders.firstWhere(
+              (order) => order.state == OrderState.shipped,
+              orElse: () => orders.first,
+            );
 
-      final activeShipped = shippedOrder.state == OrderState.shipped
-          ? shippedOrder
+      final activeShippedOrder = activeShipped?.state == OrderState.shipped
+          ? activeShipped
           : null;
 
       // Build state when loading
       state = AsyncValue.data(
         DispatcherHomeState(
           todayOrders: orders,
-          activeShippedOrder: activeShipped,
-          selectedOrder: activeShipped,
+          activeShippedOrder: activeShippedOrder,
+          selectedOrder: activeShippedOrder,
         ),
       );
     } catch (error, stackTrace) {
@@ -72,13 +74,15 @@ class DispatcherHomeNotifier
         );
 
         // Buscar shipped activa
-        final shippedOrder = orders.firstWhere(
-          (order) => order.state == OrderState.shipped,
-          orElse: () => orders.first,
-        );
+        final shippedCandidate = orders.isEmpty
+            ? null
+            : orders.firstWhere(
+                (order) => order.state == OrderState.shipped,
+                orElse: () => orders.first,
+              );
 
-        final activeShipped = shippedOrder.state == OrderState.shipped
-            ? shippedOrder
+        final activeShipped = shippedCandidate?.state == OrderState.shipped
+            ? shippedCandidate
             : null;
 
         state = AsyncValue.data(
